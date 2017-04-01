@@ -1,0 +1,36 @@
+@import 'breakpoints';
+@import 'settings';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(map-get($settings, columns), 1fr);
+  grid-gap: map-get($settings, gutter);
+
+  &--small-gutter {
+    grid-gap: #{map-get($settings, gutter) / 2};
+  }
+
+  &--no-gutter {
+    grid-gap: 0;
+  }
+
+  &__item {
+    grid-column: auto / span map-get($settings, columns);
+  }
+}
+
+@each $breakpoint-name, $breakpoint in $breakpoints {
+  @media (min-width: #{map-get($breakpoint, width)}) {
+    @for $col from 1 through map-get($settings, columns) {
+      .#{map-get($breakpoint, alias)}\:grid__item--#{$col} {
+        grid-column: auto / span $col;
+      }
+    }
+  }
+}
+
+@for $col from 1 through map-get($settings, columns) {
+  .grid__item--#{$col} {
+    grid-column: auto / span $col;
+  }
+}

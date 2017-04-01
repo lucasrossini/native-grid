@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>native-grid example</title>
+
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <link rel="stylesheet" href="../dist/grid.css" />
+
+        <style>
+            .grid {
+                background-color: grey;
+                padding: 20px;
+            }
+
+            .grid__item {
+                background-color: cyan;
+                padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="grid">
+            <div class="grid__item md:grid__item--3 lg:grid__item--8">1</div>
+            <div class="grid__item md:grid__item--6 lg:grid__item--2">2</div>
+            <div class="grid__item md:grid__item--3 lg:grid__item--2">3</div>
+        </div>
+    </body>
+</html>
