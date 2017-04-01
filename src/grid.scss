@@ -1,6 +1,10 @@
 @import 'breakpoints';
 @import 'settings';
 
+@mixin grid-column($size) {
+  grid-column: auto / span $size;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(map-get($settings, columns), 1fr);
@@ -15,7 +19,7 @@
   }
 
   &__item {
-    grid-column: auto / span map-get($settings, columns);
+    @include grid-column(map-get($settings, columns));
   }
 }
 
@@ -23,7 +27,7 @@
   @media (min-width: #{map-get($breakpoint, width)}) {
     @for $col from 1 through map-get($settings, columns) {
       .#{map-get($breakpoint, alias)}\:grid__item--#{$col} {
-        grid-column: auto / span $col;
+        @include grid-column($col);
       }
     }
   }
@@ -31,6 +35,6 @@
 
 @for $col from 1 through map-get($settings, columns) {
   .grid__item--#{$col} {
-    grid-column: auto / span $col;
+    @include grid-column($col);
   }
 }
