@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "Responsive CSS native grid layout",
   "main": "dist/grid.css",
+  "style": "dist/grid.css",
+  "files": [
+    "LICENSE.md",
+    "dist/grid.css"
+  ],
   "scripts": {
     "start": "npm run sass",
-    "sass": "gulp sass",
-    "sass:watch": "gulp sass:watch"
+    "build": "gulp sass",
+    "build:watch": "gulp sass:watch"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
