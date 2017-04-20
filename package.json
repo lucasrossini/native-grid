@@ -1,6 +1,6 @@
 {
   "name": "native-grid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Responsive CSS native grid layout",
   "main": "dist/grid.css",
   "style": "dist/grid.css",
