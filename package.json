@@ -9,7 +9,7 @@
     "dist/grid.css"
   ],
   "scripts": {
-    "start": "npm run sass",
+    "start": "npm run build",
     "build": "gulp sass",
     "build:watch": "gulp sass:watch"
   },
