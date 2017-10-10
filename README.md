@@ -22,21 +22,24 @@ Use the prefixes to define the grid item behavior in multiple breakpoints:
 
 ### Prefixes
 
-- `xs` - Extra small breakpoint (`min-width: 0px`)
-- `sm` - Small breakpoint (`min-width: 576px`)
-- `md` - Medium breakpoint (`min-width: 768px`)
-- `lg` - Large breakpoint (`min-width: 992px`)
-- `xl` - Extra large breakpoint (`min-width: 1200px`)
+- `xs` - Extra small breakpoint (`min-width: 0`)
+- `sm` - Small breakpoint (`min-width: 36rem`)
+- `md` - Medium breakpoint (`min-width: 48rem`)
+- `lg` - Large breakpoint (`min-width: 62rem`)
+- `xl` - Extra large breakpoint (`min-width: 75rem`)
 
 ## Options
 
-- **Small gutter:** Add the `grid--small-gutter` class to your grid container element;
+The grid has a default gutter of `1rem` between it's columns. But you can customize
+it using the following options:
+
+- **Small gutter (`.5rem`):** Add the `grid--small-gutter` class to your grid container element;
 - **Zero gutter:** Add the `grid--no-gutter` class to your grid container element.
 
 ## Configuration
 
 The default column system is based on `12`, as well as the default gutter width
-is `16px`, but it can be redefined on the [./src/_settings.scss](src/_settings.scss) file.
+is `1rem`, but it can be redefined on the [./src/_settings.scss](src/_settings.scss) file.
 
 After modifying the values, you just have to re-compile the stylesheet executing
 `npm start`.
