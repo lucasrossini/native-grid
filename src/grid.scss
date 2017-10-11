@@ -5,13 +5,46 @@
   grid-column: auto / span $size;
 }
 
+@mixin generate-col-classes($columns) {
+  @each $breakpoint, $min-width in $breakpoints {
+    @media (min-width: #{$min-width}) {
+      @for $col from 1 through $columns {
+        .#{$breakpoint}\:grid__col--#{$col} {
+          @include grid-column($col);
+        }
+      }
+    }
+  }
+
+  @for $col from 1 through $columns {
+    .grid__col--#{$col} {
+      @include grid-column($col);
+    }
+  }
+}
+
+$default-column-system: map-get($column-system, default);
+$column-system-variations: map-get($column-system, variations);
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(map-get($settings, columns), 1fr);
-  grid-gap: map-get($settings, gutter);
+  grid-gap: map-get($gutter-sizes, base);
+  grid-template-columns: repeat($default-column-system, 1fr);
+
+  @each $columns in $column-system-variations {
+    &--#{$columns}-column {
+      grid-template-columns: repeat($columns, 1fr);
+
+      .grid__col {
+        @include grid-column($columns);
+      }
+
+      @include generate-col-classes($columns);
+    }
+  }
 
   &--small-gutter {
-    grid-gap: #{map-get($settings, gutter) / 2};
+    grid-gap: map-get($gutter-sizes, small);
   }
 
   &--no-gutter {
@@ -19,22 +52,8 @@
   }
 
   &__col {
-    @include grid-column(map-get($settings, columns));
+    @include grid-column($default-column-system);
   }
-}
 
-@each $breakpoint, $min-width in $breakpoints {
-  @media (min-width: #{$min-width}) {
-    @for $col from 1 through map-get($settings, columns) {
-      .#{$breakpoint}\:grid__col--#{$col} {
-        @include grid-column($col);
-      }
-    }
-  }
-}
-
-@for $col from 1 through map-get($settings, columns) {
-  .grid__col--#{$col} {
-    @include grid-column($col);
-  }
+  @include generate-col-classes($default-column-system);
 }

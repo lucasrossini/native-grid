@@ -14,9 +14,9 @@ Use the prefixes to define the grid column behavior in multiple breakpoints:
 
 ```html
 <div class="grid">
-    <div class="grid__col md:grid__col--3 lg:grid__col--8">1</div>
-    <div class="grid__col md:grid__col--6 lg:grid__col--2">2</div>
-    <div class="grid__col md:grid__col--3 lg:grid__col--2">3</div>
+  <div class="grid__col md:grid__col--3 lg:grid__col--8">1</div>
+  <div class="grid__col md:grid__col--6 lg:grid__col--2">2</div>
+  <div class="grid__col md:grid__col--3 lg:grid__col--2">3</div>
 </div>
 ```
 
@@ -30,16 +30,22 @@ Use the prefixes to define the grid column behavior in multiple breakpoints:
 
 ## Options
 
-The grid has a default gutter of `1rem` between it's columns. But you can customize
-it using the following options:
+### Gutter
+
+The grid has a default gutter of `1rem` between it's columns, but you can customize it using the following options:
 
 - **Small gutter (`.5rem`):** Add the `grid--small-gutter` class to your grid container element;
 - **Zero gutter:** Add the `grid--no-gutter` class to your grid container element.
 
-## Configuration
+### Column system
 
-The default column system is based on `12`, as well as the default gutter width
-is `1rem`, but it can be redefined on the [./src/_settings.scss](src/_settings.scss) file.
+The default column system is based on `12`, but it also can be set as a 16-column grid system applying the `grid--16-column` class to your grid container element:
 
-After modifying the values, you just have to re-compile the stylesheet executing
-`npm start`.
+```html
+<div class="grid grid--16-column">
+  <div class="grid__col md:grid__col--6">1</div>
+  <div class="grid__col md:grid__col--4">2</div>
+  <div class="grid__col md:grid__col--3">3</div>
+  <div class="grid__col md:grid__col--3">4</div>
+</div>
+```

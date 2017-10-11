@@ -1,4 +1,9 @@
-$settings: (
-  columns: 12,
-  gutter: 1rem
+$column-system: (
+  default: 12,
+  variations: (16)
+);
+
+$gutter-sizes: (
+  base: 1rem,
+  small: .5rem
 );
