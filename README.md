@@ -49,3 +49,7 @@ The default column system is based on `12`, but it also can be set as a 16-colum
   <div class="grid__col md:grid__col--3">4</div>
 </div>
 ```
+
+## License
+
+[MIT](LICENSE.md)
