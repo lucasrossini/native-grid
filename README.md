@@ -10,13 +10,13 @@ Include the following stylesheet into your page:
 <link rel="stylesheet" href="./native-grid/dist/grid.css" />
 ```
 
-Use the prefixes to define the grid item behavior in multiple breakpoints:
+Use the prefixes to define the grid column behavior in multiple breakpoints:
 
 ```html
 <div class="grid">
-    <div class="grid__item md:grid__item--3 lg:grid__item--8">1</div>
-    <div class="grid__item md:grid__item--6 lg:grid__item--2">2</div>
-    <div class="grid__item md:grid__item--3 lg:grid__item--2">3</div>
+    <div class="grid__col md:grid__col--3 lg:grid__col--8">1</div>
+    <div class="grid__col md:grid__col--6 lg:grid__col--2">2</div>
+    <div class="grid__col md:grid__col--3 lg:grid__col--2">3</div>
 </div>
 ```
 

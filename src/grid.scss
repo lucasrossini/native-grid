@@ -18,7 +18,7 @@
     grid-gap: 0;
   }
 
-  &__item {
+  &__col {
     @include grid-column(map-get($settings, columns));
   }
 }
@@ -26,7 +26,7 @@
 @each $breakpoint, $min-width in $breakpoints {
   @media (min-width: #{$min-width}) {
     @for $col from 1 through map-get($settings, columns) {
-      .#{$breakpoint}\:grid__item--#{$col} {
+      .#{$breakpoint}\:grid__col--#{$col} {
         @include grid-column($col);
       }
     }
@@ -34,7 +34,7 @@
 }
 
 @for $col from 1 through map-get($settings, columns) {
-  .grid__item--#{$col} {
+  .grid__col--#{$col} {
     @include grid-column($col);
   }
 }
